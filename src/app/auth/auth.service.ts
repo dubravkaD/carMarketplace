@@ -5,5 +5,23 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  constructor() { }
+  private isUserAuthenticated = false;
+
+  constructor() {
+  }
+
+  getIsUserAuthenticated() {
+    return this.isUserAuthenticated;
+  }
+
+  login() {
+    this.isUserAuthenticated = true;
+  }
+
+  logout() {
+    this.isUserAuthenticated = false;
+  }
+
+  register() {
+  }
 }
