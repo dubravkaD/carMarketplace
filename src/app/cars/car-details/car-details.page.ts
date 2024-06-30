@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Car} from "../car-model";
 import {ActivatedRoute, Route, Router} from "@angular/router";
 import {CarService} from "../car.service";
+import {User} from "../../auth/user";
+import {UserService} from "../../auth/user.service";
 
 @Component({
   selector: 'app-car-details',
@@ -12,20 +14,27 @@ export class CarDetailsPage implements OnInit {
 
   // @ts-ignore
   car:Car;
-  constructor(private activatedRoute:ActivatedRoute,private router:Router,private carService:CarService) {
-    console.log(this.activatedRoute.snapshot.paramMap.get('id'));
+  user:User;
+  constructor(private activatedRoute:ActivatedRoute,private router:Router,private carService:CarService, private userService:UserService) {
+    /*console.log(this.activatedRoute.snapshot.paramMap.get('id'));
     console.log(this.activatedRoute.paramMap);
     console.log(this.activatedRoute.snapshot.data);
     console.log("url "+this.activatedRoute.url);
-    console.log("id "+this.activatedRoute.snapshot.params['id']);
+    console.log("id "+this.activatedRoute.snapshot.params['id']);*/
     //console.log(this.route.path)
     //console.log(this.router.url)
 
     this.activatedRoute.paramMap.subscribe(paramMap=>{
       // @ts-ignore
       this.car=this.carService.getCar(paramMap.get('id')!!);
+      console.log(this.car.uid)
+      // @ts-ignore
+      console.log(this.userService.getUser(this.car.uid))
       console.log(this.car)
     })
+    // @ts-ignore
+    // this.user=this.userService.getUser(this.car.uid)
+    this.user=this.userService.getUser("")
   }
 
   ngOnInit() {
