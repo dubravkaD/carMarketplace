@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/cars"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>car-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+
+        <ion-thumbnail>
+          <img src="{{car.imageUrl}}"/>
+        </ion-thumbnail>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-margin-horizontal">
+        {{car.model}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        {{car.description}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>User: {{car.uid}}</ion-col>
+      <ion-col>Posted on: {{car.datePosted}}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
