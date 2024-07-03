@@ -19,4 +19,7 @@ export class CarsPage implements OnInit {
   ngOnInit() {
   }
 
+  addCar(){
+
+  }
 }
