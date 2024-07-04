@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -8,6 +8,7 @@ import { CarsPageRoutingModule } from './cars-routing.module';
 
 import { CarsPage } from './cars.page';
 import {CarElementComponent} from "./car-element/car-element.component";
+import {CarModalComponent} from "./car-modal/car-modal.component";
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {CarElementComponent} from "./car-element/car-element.component";
     FormsModule,
     IonicModule,
     CarsPageRoutingModule,
+    ReactiveFormsModule
   ],
-  declarations: [CarsPage, CarElementComponent]
+  declarations: [CarsPage, CarElementComponent, CarModalComponent],
 })
 export class CarsPageModule {}

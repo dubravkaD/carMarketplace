@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="save()">
+        <ion-icon name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addForm">
+    <ion-grid size-sm="6" offset-sm="3">
+      <ion-row>
+        <ion-col>
+          <ion-input type="text" label="Model" label-placement="floating" formControlName="model" required></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input type="number" label="Year" label-placement="floating" formControlName="year" required></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input type="number" label="Price" label-placement="floating" formControlName="price" required></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input type="url" label="Image" label-placement="floating" formControlName="imageURL" required></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-textarea label="Description" formControlName="description" required></ion-textarea>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

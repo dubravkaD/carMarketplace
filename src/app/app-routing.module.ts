@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: 'cars',
     loadChildren: () => import('./cars/cars.module').then( m => m.CarsPageModule),
-    canActivate: [authGuard]
+    /*canActivate: [authGuard]*/
   },
 ];
 

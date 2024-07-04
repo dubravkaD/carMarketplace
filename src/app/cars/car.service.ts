@@ -16,4 +16,8 @@ export class CarService {
   getCar(id:string){
     return this.cars.find((c) => c.id === id);
   }
+
+  addCar() {
+    console.log("saved")
+  }
 }

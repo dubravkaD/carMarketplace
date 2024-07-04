@@ -23,7 +23,7 @@ import {environment} from "../environments/environment";
     FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    //AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule
   ],
